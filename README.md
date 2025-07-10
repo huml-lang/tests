@@ -11,4 +11,9 @@ The `./assertions` directory contains a series of JSON files. Each file is an ar
 - `input` is the HUML string that the parser evaluates.
 - `error` indicates whether input is expected to throw a parser error (`true` = parser should throw an error for the input)
 
-Parsers should unserialize the JSON array to a structure in the respective language, iterate through the array, and execute the parsing test using the `input` string and assert a parser error based on the `error` field.
+Parsers can unserialize the JSON array to a structure in the respective language, iterate through the array, and execute the parsing test using the `input` string and assert a parser error based on the `error` field.
+
+## documents
+The `./docs` directory contains fully formed HUML documents (with the .huml extension) with a corresponding `.json` file with the representation of the HUML document as JSON. For instance `mixed.huml` and `mixed.json`.
+
+Parsers can read each HUML document, deserialize it, and deep-compare it with the deserialized data structure read from the corresponding .json file.
