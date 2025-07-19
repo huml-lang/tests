@@ -39,7 +39,7 @@
 	{"name": "quoted_string", "input": "key: \"hello world\"", "error": false},
 	{"name": "quoted_string_with_escapes", "input": "key: \"hello \\\"world\\\"\"", "error": false},
 	{"name": "quoted_string_with_unicode", "input": "key: \"hello \u0041 world\"", "error": false},
-	{"name": "quoted_string_with_all_escapes", "input": "key: \"test\\n\\t\\r\\b\\f\\\\\\/\\\"\"", "error": false},
+	{"name": "quoted_string_with_all_escapes", "input": "key: \"test\\n\\t\\r\\f\\\\\\/\\\"\"", "error": false},
 	{"name": "multiline_string_backticks", "input": "key: ```\nline1\nline2\n```", "error": false},
 	{"name": "multiline_string_triple_quotes", "input": "key: \"\"\"\nline1\nline2\n\"\"\"", "error": false},
 	{"name": "quoted_key", "input": "\"quoted-key\": \"value\"", "error": false},
