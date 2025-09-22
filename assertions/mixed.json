@@ -49,6 +49,8 @@
 	{"name": "value_with_comment", "input": "key: \"value\" # comment", "error": false},
 	{"name": "invalid_value_with_comment", "input": "key: value # comment", "error": true},
 	{"name": "key_with_comment_after_colon", "input": "key: # comment only", "error": true},
+	{"name": "invalid_key", "input": "1: true", "error": true},
+	{"name": "invalid_key", "input": "_a: true", "error": true},
 	{"name": "empty_value", "input": "key:", "error": true},
 	{"name": "empty_value", "input": "key: ", "error": true},
 	{"name": "empty_value", "input": "key:  ", "error": true},
@@ -101,6 +103,8 @@
 	{"name": "inline_dict_no_space_after_colon", "input": "key:: a:1", "error": true},
 	{"name": "inline_dict_value_parse_error", "input": "key:: a: +", "error": true},
 	{"name": "inline_dict_trailing_comma_error", "input": "key:: a: 1,trailing", "error": true},
+	{"name": "inline_dict_invalid_key", "input": "dict:: 1: true", "error": true},
+	{"name": "inline_dict_invalid_key", "input": "dict:: _a: true", "error": true},
 	{"name": "simple_list", "input": "list::\n  - \"item1\"\n  - \"item2\"", "error": false},
 	{"name": "nested_list", "input": "list::\n  - \"item1\"\n  - ::\n    - \"nested1\"\n    - \"nested2\"", "error": false},
 	{"name": "empty_list", "input": "list:: []", "error": false},
@@ -172,5 +176,7 @@
 	{"name": "empty_list_again", "input": "list:: []\n", "error": false},
 	{"name": "list_with_special_values", "input": "values:: null, true, false, nan, inf, -inf", "error": false},
 	{"name": "list_with_inline_dicts", "input": "contacts::\n  - :: type: \"admin\", email: \"admin@example.com\", bool: true, empty: null\n  - :: type: \"support\", email: \"support@example.com\", bool: true, empty: null", "error": false},
-	{"name": "list_with_multiline_dicts", "input": "contacts::\n  - ::\n      str: \"admin\"\n      num: 1234\n  - ::\n      str: \"admin2\"\n      num: 45.67", "error": false}
+	{"name": "list_with_multiline_dicts", "input": "contacts::\n  - ::\n      str: \"admin\"\n      num: 1234\n  - ::\n      str: \"admin2\"\n      num: 45.67", "error": false},
+	{"name": "multiline_dict_invalid_key", "input": "dict::\n  1: true", "error": true},
+	{"name": "multiline_dict_invalid_key", "input": "dict::\n  _a: true", "error": true}
 ]
