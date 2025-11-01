@@ -178,5 +178,7 @@
 	{"name": "list_with_inline_dicts", "input": "contacts::\n  - :: type: \"admin\", email: \"admin@example.com\", bool: true, empty: null\n  - :: type: \"support\", email: \"support@example.com\", bool: true, empty: null", "error": false},
 	{"name": "list_with_multiline_dicts", "input": "contacts::\n  - ::\n      str: \"admin\"\n      num: 1234\n  - ::\n      str: \"admin2\"\n      num: 45.67", "error": false},
 	{"name": "multiline_dict_invalid_key", "input": "dict::\n  1: true", "error": true},
-	{"name": "multiline_dict_invalid_key", "input": "dict::\n  _a: true", "error": true}
+	{"name": "multiline_dict_invalid_key", "input": "dict::\n  _a: true", "error": true},
+	{"name": "list_with_badly_indented_multiline_dicts", "input": "contacts::\n  - ::\n      str: \"admin\"\n      num: 1234\n  - ::\n      str: \"admin2\"\n      num: 45.67", "error": true},
+	{"name": "list_with_multiline_dicts", "input": "contacts::\n  - ::\n    str: \"admin\"\n    num: 1234\n  - ::\n    str: \"admin2\"\n    num: 45.67", "error": false}
 ]
