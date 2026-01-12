@@ -172,5 +172,9 @@
 	{"name": "list_with_special_values", "input": "values:: null, true, false, nan, inf, -inf", "error": false},
 	{"name": "list_with_inline_dicts", "input": "contacts::\n  - :: type: \"admin\", email: \"admin@example.com\", bool: true, empty: null\n  - :: type: \"support\", email: \"support@example.com\", bool: true, empty: null", "error": false},
 	{"name": "list_with_badly_indented_multiline_dicts", "input": "contacts::\n  - ::\n      str: \"admin\"\n      num: 1234\n  - ::\n      str: \"admin2\"\n      num: 45.67", "error": true},
-	{"name": "list_with_multiline_dicts", "input": "contacts::\n  - ::\n    str: \"admin\"\n    num: 1234\n  - ::\n    str: \"admin2\"\n    num: 45.67", "error": false}
+	{"name": "list_with_multiline_dicts", "input": "contacts::\n  - ::\n    str: \"admin\"\n    num: 1234\n  - ::\n    str: \"admin2\"\n    num: 45.67", "error": false},
+	{"name": "inline_list_with_trailing_comment","input": "roles:: \"web\", \"api\" # comment","error": false},
+	{"name": "inline_dict_with_trailing_comment","input": "props:: mime_type: \"text/html\", encoding: \"gzip\" # Inline dict.","error": false},
+	{"name": "inline_list_with_trailing_comment_with_preceding_spaces","input": "fruits:: \"apple\", \"mango\"     # fruits example.","error": false},
+	{"name": "inline_dict_with_trailing_comment_with_preceding_spaces","input": "fruits_taste:: mango: \"sweet\", lemon: \"sour\"    # fruits taste.","error": false}
 ]
